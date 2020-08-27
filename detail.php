@@ -124,10 +124,10 @@
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo "Cantidad". $_POST['unit'] ?>
+                                            <?php echo "Cantidad: ". $_POST['unit'] ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo "Total: $". $_POST['price'] ?>
+                                            <?php echo "Total: $ ". $_POST['price'] ?>
                                         </h3>
                                         
                                     </div>
