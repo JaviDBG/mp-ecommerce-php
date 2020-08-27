@@ -152,7 +152,7 @@
                                     $payer->name = "Lalo";
                                     $payer->surname = "Landa";
                                     $payer->email = "test_user_58295862@testuser.com";
-                                    $datetime = new DateTime('2010-12-30 23:21:46');
+                                    $datetime = new DateTime();
                                     echo $datetime->format(DateTime::ATOM); // Updated ISO8601
                                     $payer->date_created = "2018-06-02T12:58:41.425-04:00";
                                     $payer->phone = array(
