@@ -143,29 +143,35 @@
 
                                     // Crea un ítem en la preferencia
                                     $item = new MercadoPago\Item();
+                                    $item->id= "1234";
                                     $item->title = $_POST['title'];
+                                    $item->description="Dispositivo móvil de Tienda e-commerce";
                                     $item->quantity = $_POST['unit'] ;
                                     $item->unit_price = $_POST['price']; 
                                     $preference->items = array($item);
+                                    $preference->external_reference="external_reference";
                                     $preference->save();
                                     $payer = new MercadoPago\Payer();
                                     $payer->name = "Lalo";
                                     $payer->surname = "Landa";
                                     $payer->email = "test_user_58295862@testuser.com";
+                                    /* Obtencion de fecha */
                                     date_default_timezone_set('America/Mexico_City');                                    
                                     $datetime = new DateTime();
-                                    echo $datetime->format(DateTime::ATOM); // Updated ISO8601
-                                    $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+                                    $datetime->format(DateTime::ATOM); // Updated ISO8601
+                                    /*--------*/
+                                    $payer->date_created = $datetime;
                                     $payer->phone = array(
-                                      "area_code" => "",
-                                      "number" => "949 128 866"
+                                      "area_code" => "52",
+                                      "number" => "5549737300"
                                     );
                                     
                                     $payer->address = array(
-                                      "street_name" => "Cuesta Miguel Armendáriz",
-                                      "street_number" => 1004,
-                                      "zip_code" => "11020"
+                                      "street_name" => "Insurgentes Sur",
+                                      "street_number" => 1602,
+                                      "zip_code" => "03940"
                                     );
+                                    $payer->save();
                                     ?>
                                    <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                    <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
