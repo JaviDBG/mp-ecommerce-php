@@ -148,6 +148,23 @@
                                     $item->unit_price = $_POST['price']; 
                                     $preference->items = array($item);
                                     $preference->save();
+                                    $payer = new MercadoPago\Payer();
+                                    $payer->name = "Lalo";
+                                    $payer->surname = "Landa";
+                                    $payer->email = "test_user_58295862@testuser.com";
+                                    $datetime = new DateTime('2010-12-30 23:21:46');
+                                    echo $datetime->format(DateTime::ATOM); // Updated ISO8601
+                                    $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+                                    $payer->phone = array(
+                                      "area_code" => "",
+                                      "number" => "949 128 866"
+                                    );
+                                    
+                                    $payer->address = array(
+                                      "street_name" => "Cuesta Miguel Armendáriz",
+                                      "street_number" => 1004,
+                                      "zip_code" => "11020"
+                                    );
                                     ?>
                                    <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                    <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
