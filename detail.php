@@ -152,6 +152,7 @@
                                     $payer->name = "Lalo";
                                     $payer->surname = "Landa";
                                     $payer->email = "test_user_58295862@testuser.com";
+                                    date_default_timezone_set('America/Mexico_City');                                    
                                     $datetime = new DateTime();
                                     echo $datetime->format(DateTime::ATOM); // Updated ISO8601
                                     $payer->date_created = "2018-06-02T12:58:41.425-04:00";
