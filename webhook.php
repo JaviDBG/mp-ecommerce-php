@@ -14,7 +14,7 @@ MercadoPago\SDK::setAccessToken("APP_USR-1159009372558727-072921-8d0b9980c749498
 $response;
 switch($_POST["type"]) {
     case "payment":
-        $payment = MercadoPago\Payment::find_by_id($_POST['id']);
+        $payment = MercadoPago\Payment::find_by_id((int)$_POST['id']);
         $response = $payment;
         break;
     case "plan":
@@ -35,6 +35,11 @@ switch($_POST["type"]) {
 file_put_contents(
     'registro.log',
     json_encode($response) . PHP_EOL,
+    FILE_APPEND
+  );
+  file_put_contents(
+    'post.log',
+    json_encode($_POST) . PHP_EOL,
     FILE_APPEND
   );
 http_response_code(404);
