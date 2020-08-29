@@ -145,7 +145,10 @@
                                             Tu producto esta en camino!
                                         </h3>
                                         <?php
-                                            var_dump($_GET);
+                                            //var_dump($_GET);
+                                            echo '"payment_type" : '.$_GET['payment_type'].'</br>'; 
+                                            echo '"external_reference" : '.$_GET['external_reference'].'</br>'; 
+                                            echo '"collection_id" : '.$_GET['collection_id'].'</br>'; 
                                         ?>
                                     </div>
                                    <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
