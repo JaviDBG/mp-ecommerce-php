@@ -33,5 +33,10 @@ file_put_contents(
     json_encode($response) . PHP_EOL,
     FILE_APPEND
   );
+  file_put_contents(
+    'post.log',
+    json_encode($_POST) . PHP_EOL,
+    FILE_APPEND
+  );
   http_response_code(200);
 ?>
