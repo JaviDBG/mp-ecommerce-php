@@ -182,7 +182,7 @@
                                         "pending" => $host."/pending.php"
                                     );
                                     $preference->auto_return = "approved";
-                                    $preference->notification_url =$host."/webhook.php";
+                                    $preference->notification_url =$host."/webhook.php?source_news=webhooks";
                                     $preference->save();
                                     $payer = new MercadoPago\Payer();
                                     $payer->name = "Lalo";

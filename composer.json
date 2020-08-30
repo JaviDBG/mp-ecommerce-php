@@ -2,6 +2,6 @@
     "name": "mp/ecommercephp",
     "type": "project",
     "require": {
-        "mercadopago/dx-php": "2.1.0"
+        "mercadopago/dx-php": "^2.1"
     }
 }
