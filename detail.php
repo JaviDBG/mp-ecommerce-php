@@ -174,7 +174,7 @@
                                     $item->quantity = $_POST['unit'] ;
                                     $item->unit_price = $_POST['price'];
                                     $item->picture_url=$host.$_POST['img'];
-                                    $preference->items = array($item);
+                                    
                                     $preference->external_reference="djbarriosgomez@gmail.com";
                                     $preference->back_urls = array(
                                         "success" => $host."/success.php",
@@ -183,7 +183,7 @@
                                     );
                                     $preference->auto_return = "approved";
                                     $preference->notification_url =$host."/webhook.php?source_news=webhooks";
-                                    $preference->save();
+                                  
                                     $payer = new MercadoPago\Payer();
                                     $payer->name = "Lalo";
                                     $payer->surname = "Landa";
@@ -204,6 +204,10 @@
                                       "street_number" => 1602,
                                       "zip_code" => "03940"
                                     );
+                                    $preference->items = array($item);
+                                    $preference->payer = $payer;
+                                    $preference->save();
+
                                     ?>
                                    <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                    <a  class="mercadopago-button"  href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
